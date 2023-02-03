@@ -1,14 +1,14 @@
-import React from "react"
-import classes from "./index.module.css"
+import React from "react";
+import classes from "./index.module.css";
 
-function AnimalCard({ name, srcimg, description }) {
-	return (
-		<div className={classes.container}>
-			<p>{name}</p>
-			<img src={srcimg} alt="" />
-			<p>{description}</p>
-		</div>
-	)
+function AnimalCard({ name, image, description }) {
+  return (
+    <div className={classes.container}>
+      <p>{name}</p>
+      <img src={image} alt="" />
+      <p>{description}</p>
+    </div>
+  );
 }
 
-export default AnimalCard
+export default AnimalCard;

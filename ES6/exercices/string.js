@@ -10,3 +10,11 @@
 // 7. console.log this sentence using template literals:
 //"My name is "your name" ,
 //and it is "name length" characters long"
+
+var myName = "nassim";
+var myNameLength = myName.length;
+var myNameUpperCase = myName.toUpperCase();
+var myNameLowerCase = myName.toLowerCase();
+var myNameFirstLetter = myName.charAt(0);
+var myNameLastLetter = myName.charAt(myNameLength - 1);
+console.log(`My name is ${myName} and it is ${myNameLength} characters long`);
