@@ -1,6 +1,6 @@
 // using destructuring exercise
 const person = {
-  name: "John",
+  Name: "John",
   age: 100,
   city: "New York",
 };
@@ -9,8 +9,8 @@ const person = {
 // 2. using destructuring, create a variable called "age"
 // and assign it the value of the age property of the object below
 
-var { name } = person;
-var { age } = person;
+const { Name, age } = person;
+console.log(Name, age);
 //know imagine you have a response from a backend
 //and it is an object with the following structure
 const response = {
@@ -30,10 +30,18 @@ const response = {
 //"status" and "message"
 //if the status is 200, return the message and the name
 //  verify your function with console.log
-const fct = ({ data, status, message }) => {
-  var { name } = { data };
-  return status === 200 ? `${message} ${name}` : null;
-};
+function destParams({
+  data: {
+    user: { name },
+  },
+  status,
+  message,
+}) {
+  if (status === 200) {
+    return `${message} ${name}`;
+  }
+}
+console.log(destParams(response));
 
 console.log(fct(response));
 // rest operator exercise
@@ -43,12 +51,15 @@ console.log(fct(response));
 // 4. using the rest operator, create a variable called "last"
 // 5. using the rest operator, create a variable called "second"
 
-const fct2 = (first, second, ...rest) => {
-  console.log("first", first);
-  console.log("second", second);
-  console.log("rest", rest);
-  console.log("last", rest[rest.length - 1]);
+const RestOperator = (arr) => {
+  const [first, ...rest] = arr;
+  const [second, ...last] = rest;
+  const arrr = [];
+
+  return { first, rest, last, second };
 };
+console.log(RestOperator([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
 // concat exercise
 // 1. create a function that takes multiple numbers as parameters
 //  using the rest operator in params,
@@ -66,10 +77,9 @@ const fct2 = (first, second, ...rest) => {
 //     last: 10,
 //}
 
-const concat = (a, ...args) => {
-  var obj = {};
-  obj["first"] = a;
-  obj["rest"] = args;
-
-  return obj;
+const concat = (...args) => {
+  const [first, ...rest] = args;
+  const [second, ...last] = rest;
+  return { first, rest, last: args[args.length - 1] };
 };
+console.log(concat(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));

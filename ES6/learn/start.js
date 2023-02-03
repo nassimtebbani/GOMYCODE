@@ -15,7 +15,7 @@ const person = {
 let LoginHandler = (person) => {
     return `my name is ${person.name}, i'm ${person.age} and we are learning ${city.track}`;
 };
-console.log(LoginHandler(user));
+console.log(LoginHandler(person));
 
 let Component = ({ name, age, track }) => {
     return `my name is ${name}, i'm ${age} and we are learning ${track} `;
@@ -27,7 +27,7 @@ console.log(Name, age, city);
 let infos = { track: 'full stack js', framework: 'react' }
 let fullinfo = {...person, ...infos }
 console.log(fullinfo)
-let info = {...user, id: 1 }
+let info = {...person, id: 1 }
 console.log(info)
 
 
@@ -46,9 +46,3 @@ function RestOperator(a, b, ...args) {
     console.log(args)
 }
 RestOperator(1, 2, 3, 4, 5);
-
-//arrow functions
-
-const add = (a, b) => {
-    return a + b;
-}

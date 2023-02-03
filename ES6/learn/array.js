@@ -1,7 +1,7 @@
 //array ES6
-const array = [1, 2, 3, 4, 5];
+const array = [1, "somehting", "otherthing", 4, 5];
 //for each
-let array11 = array.forEach(el => el * 2)
+array.forEach((el) => console.log(el * 2))
 
 //map (very similar to forEach but it returns a new array)
 let array1 = array.map(el => el * 2)

@@ -33,4 +33,6 @@ export const animals = [
       "il change de couleur selon son environnement, il croit qu'il est discret alors que...",
   },
 ];
+
 export const something = "something";
+export default animals;
